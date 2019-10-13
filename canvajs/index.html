@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function draw2() {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                animationEnabled: true,
+                zoomEnabled: true,
+                title: {
+                    text: "时间与文章阅读数"
+                },
+                axisX: {
+                    title: "时间",
+                    gridThickness: 2
+                },
+                axisY: {
+                    title: "文章阅读数",
+                    //  valueFormatString: "0.###s"
+                },
+                data: [{
+                    type: "area",
+                    xValueType: "dateTime",
+                    dataPoints: [ //array
+                        { x: new Date(2018, 5), y: 27 },
+                        { x: new Date(2018, 6), y: 100 },
+                        { x: new Date(2018, 7), y: 202 },
+                        { x: new Date(2018, 8), y: 75 },
+                        { x: new Date(2018, 9), y: 310 },
+                        { x: new Date(2018, 10), y: 387 },
+                        { x: new Date(2018, 11), y: 265 },
+                        { x: new Date(2018, 12), y: 226 },
+
+                        { x: new Date(2019, 1), y: 186 },
+                        { x: new Date(2019, 2), y: 142 },
+                        { x: new Date(2019, 3), y: 110 },
+                        { x: new Date(2019, 4), y: 36 },
+                        { x: new Date(2019, 5), y: 100 },
+                        { x: new Date(2019, 6), y: 133 },
+                        { x: new Date(2019, 7), y: 128 },
+                    ]
+                }]
+            });
+
+            chart.render();
+        }
+        window.onload = function () {
+            draw2();
+        }
+    </script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+
+<body>
+    <div id="chartContainer" style="height: 300px; width: 50%;"></div>
+</body>
+
+</html>
