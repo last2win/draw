@@ -46,8 +46,44 @@
 
             chart.render();
         }
+        function draw3() {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                animationEnabled: true,
+                zoomEnabled: true,
+                title: {
+                    text: "put操作RPC并发数与QPS关系图",
+                    fontSize: 15,
+                },
+                axisX: {
+                    title: "RPC并发数",
+                    // gridThickness: 2
+                },
+                axisY: {
+                    title: "QPS",
+                    //  valueFormatString: "0.###s"
+                },
+                data: [{
+                    type: "line",
+                    // xValueType: "dateTime",
+                    dataPoints: [ //array
+                        { x: 1, y: 166 },
+                        { x: 5, y: 998 },
+                        { x: 10, y: 2171 },
+                        { x: 20, y: 4444 },
+                        { x: 40, y: 8837 },
+                        { x: 80, y: 13192 },
+                        { x: 120, y: 13582 },
+                        { x: 160, y: 11476 },
+
+                    ]
+                }]
+            });
+
+            chart.render();
+        }
         window.onload = function () {
-            draw2();
+            draw3();
         }
     </script>
     <script type="text/javascript" src="canvasjs.min.js"></script>
